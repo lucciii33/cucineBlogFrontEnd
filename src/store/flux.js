@@ -7,9 +7,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			loginToken: async (email, password) => {
 				console.log("function called")
-				const resp = await fetch(`${process.env.BACKEND_URL}/api/user/login`, {
+				const resp = await fetch('http://localhost:5000/api/user/login', {
 				  method: "POST",
-				  headers: { "Content-Type": "application/json" },
+				  headers: { "Content-Type": "application/json",
+				"Access-Control-Allow-Origin":"*"
+				},
 				  body: JSON.stringify({ email, password })
 				});
 				console.log("after fetch")

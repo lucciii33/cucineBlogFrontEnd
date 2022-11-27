@@ -6,6 +6,7 @@ import { Recipes } from "./views/recipes";
 import { Register } from "./views/register";
 import { Login } from "./views/login";
 import {Navbar} from "./components/navbar"
+import injectContext from "../src/store/appContext";
 
 function App() {
   return (
@@ -22,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default injectContext(App);

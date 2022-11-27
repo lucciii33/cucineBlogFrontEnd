@@ -8,6 +8,7 @@ export const Login = () => {
   const handleChange = e => {
     setSingIn({ ...singIn, [e.target.name]: e.target.value });
   };
+  console.log(store)
   return (
     <div className="conta">
       <h1>Login</h1>
@@ -20,7 +21,7 @@ export const Login = () => {
           <input onChange={handleChange} name="password" value={singIn.password}
           />
         </div>
-        <button onClick={actions.loginToken(singIn.email,singIn.password )}>send</button>
+        <button onClick={()=>actions.loginToken(singIn.email,singIn.password )}>send</button>
       </div>
   );
 };
